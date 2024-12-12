@@ -1,23 +1,23 @@
 import { useAnimate, useInView } from "framer-motion";
 import React, { useEffect } from "react";
-import { FiCode, FiDollarSign, FiGift, FiMail } from "react-icons/fi";
+import { FiSettings, FiLayers, FiShield, FiSmile } from "react-icons/fi";
 
 const STEPS = [
   {
-    Icon: FiCode,
-    text: "Connect",
+    Icon: FiSettings,
+    text: "Automate",
   },
   {
-    Icon: FiMail,
-    text: "Send",
+    Icon: FiLayers,
+    text: "Integrate",
   },
   {
-    Icon: FiDollarSign,
-    text: "Profit",
+    Icon: FiShield,
+    text: "Secure",
   },
   {
-    Icon: FiGift,
-    text: "Celebrate",
+    Icon: FiSmile,
+    text: "Succeed",
   },
 ];
 
