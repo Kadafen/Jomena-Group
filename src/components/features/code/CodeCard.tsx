@@ -9,9 +9,9 @@ export const CodeCard = () => {
   const [selected, setSelected] = useState<"auto" | "int" | "dev" | "o365" | "it" | "db" | "domain" | "landing" | "api" | "security" | "infra" | "remote" | "dash">("auto");
 
   return (
-    <Card className="mx-auto max-w-3xl pt-3">
-      <div className="-mx-9 mb-6 flex items-center justify-between border-b border-zinc-700 px-6 pb-3">
-        <div className="flex items-center gap-3 flex-wrap">
+    <Card className="mx-auto max-w-2xl pt-3">
+      <div className="-mx-9 mb-6 flex items-center border-b border-zinc-700 px-6 pb-3">
+        <div className="flex flex-wrap gap-2 max-w-[650px]">
           <ToggleChip
             onClick={() => setSelected("auto")}
             selected={selected === "auto"}
@@ -91,10 +91,6 @@ export const CodeCard = () => {
             Dashboard
           </ToggleChip>
         </div>
-        <BubbleButton className="text-xs">
-          <FiZap className="mr-1" />
-          Deploy
-        </BubbleButton>
       </div>
       <div className="no-scrollbar -mx-6 overflow-x-scroll px-6">
         <Markup
@@ -115,6 +111,12 @@ export const CodeCard = () => {
           }
           lang="typescript"
         />
+      </div>
+      <div className="mt-8 flex justify-center">
+        <BubbleButton className="flex items-center gap-2 px-6 py-2 text-base">
+          <FiZap className="text-lg" />
+          Deploy
+        </BubbleButton>
       </div>
       <PulseLine />
     </Card>
