@@ -8,6 +8,9 @@ export const NavLinks = () => {
         <NavLink href="/#features">Features</NavLink>
       </li>
       <li>
+        <NavLink href="/#services">Services</NavLink>
+      </li>
+      <li>
         <NavLink href="/#testimonials">Testimonials</NavLink>
       </li>
       <li>
