@@ -1,35 +1,38 @@
 import React, { useEffect, useRef } from "react";
 import { animate, useInView } from "framer-motion";
-import { CornerBlur } from "@/components/utils/CornerBlur";
+import { CornerBlur } from "../../utils/CornerBlur";
 
 export const Stats = () => {
   return (
     <div className="relative overflow-hidden border-y border-zinc-700 bg-zinc-900/30">
       <div className="relative z-20 mx-auto max-w-3xl px-4 py-12">
         <h2 className="mx-auto mb-9 block w-fit bg-gradient-to-br from-zinc-200 to-zinc-500 bg-clip-text text-center text-lg text-transparent">
-          Have hard stats? Numbers don't lie!
+          Giving time back to businesses since 2014
         </h2>
 
         <div className="flex flex-col items-center justify-center sm:flex-row">
           <Stat
-            num={45}
-            suffix="%"
-            subheading="Lorem ipsum dolor sit amet consectetur"
+            num={17}
+            suffix="hrs"
+            subheading="Given back to you weekly through our automation"
           />
           <div className="h-[1px] w-12 bg-zinc-600 sm:h-12 sm:w-[1px]" />
           <Stat
-            num={15.5}
-            decimals={1}
-            suffix="K+"
-            subheading="Lorem ipsum dolor sit amet consectetur"
+            num={17680}
+            suffix="+"
+            subheading="Hours saved annually across our business clients"
           />
           <div className="h-[1px] w-12 bg-zinc-600 sm:h-12 sm:w-[1px]" />
           <Stat
-            num={20}
-            suffix="B+"
-            subheading="Lorem ipsum dolor sit amet consectetur"
+            num={8}
+            suffix="x"
+            subheading="Full-time employees' worth of time saved annually"
           />
         </div>
+
+        <p className="mt-8 text-center text-sm text-zinc-500">
+          Time that can be reinvested into growth, strategy, and innovation
+        </p>
       </div>
 
       <CornerBlur />
