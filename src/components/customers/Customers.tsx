@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MaxWidthWrapper } from "../utils/MaxWidthWrapper";
 import { Card } from "../utils/Card";
-import { SiX } from "react-icons/si";
+import { SiX, SiLinkedin, SiFacebook } from "react-icons/si";
 import { BubbleButton } from "../buttons/BubbleButton";
 import { motion } from "framer-motion";
 import { useWindowSize } from "../utils/useWindowSize";
@@ -20,10 +20,9 @@ export const Customers = () => {
     <section id="testimonials" className="relative overflow-hidden">
       <MaxWidthWrapper className="relative z-10 py-20 md:py-40">
         <SectionHeadingSpacing>
-          <SectionHeading>Loved by our customers</SectionHeading>
+          <SectionHeading>Success Stories</SectionHeading>
           <SectionSubheading>
-            People trust people. Show off all of the great reviews of your
-            product to ease the minds of potential customers.
+            Discover how businesses thrive with our dedicated remote IT solutions
           </SectionSubheading>
         </SectionHeadingSpacing>
         <motion.div
@@ -37,7 +36,7 @@ export const Customers = () => {
               height: "fit-content",
             },
             closed: {
-              height: 400,
+              height: 600,
             },
           }}
           className="relative grid grid-cols-1 gap-3 md:grid-cols-3"
@@ -86,9 +85,10 @@ const ReviewsColumn = ({ reviews }: { reviews: typeof REVIEWS.left }) => {
       {reviews.map((r) => (
         <Card
           style={{
-            padding: "20px",
+            padding: r.size === "large" ? "28px" : "20px",
           }}
           key={r.name}
+          className="transform hover:scale-[1.02] transition-all duration-300"
         >
           <div className="mb-1.5 flex items-center justify-between">
             <div className="relative flex items-center gap-2 py-2 text-xs">
@@ -104,104 +104,159 @@ const ReviewsColumn = ({ reviews }: { reviews: typeof REVIEWS.left }) => {
                 <span className="block text-zinc-500">{r.handle}</span>
               </div>
             </div>
-
-            <SiX className="text-sky-300" />
+            {r.platform === 'linkedin' && <SiLinkedin className="text-[#0077b5]" />}
+            {r.platform === 'facebook' && <SiFacebook className="text-[#1877f2]" />}
+            {r.platform === 'x' && <SiX className="text-sky-300" />}
           </div>
-          <p>{r.review}</p>
+          <p className={r.size === "large" ? "text-base" : "text-sm"}>{r.review}</p>
         </Card>
       ))}
     </div>
   );
 };
 
+type ReviewType = {
+  src: string;
+  name: string;
+  handle: string;
+  review: string;
+  size: "small" | "medium" | "large";
+  platform: "x" | "linkedin" | "facebook";
+};
+
 const REVIEWS = {
   left: [
     {
-      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=John",
-      name: "John Johnson",
-      handle: "@johns6",
-      review:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum labore incidunt temporibus sunt? Excepturi nulla atque odio dolore, velit harum.",
+      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah&gender=male",
+      name: "Sarah Chen",
+      handle: "@sarahc_tech",
+      review: "Saved $45K annually switching to their remote IT team. Great service! 💰",
+      size: "medium",
+      platform: "linkedin"
     },
     {
-      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dan",
-      name: "Dan Daniels",
-      handle: "@DannyD",
+      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mike&gender=female",
+      name: "Mike Rodriguez",
+      handle: "@mrodriguez",
       review:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum labore velit harum.",
+        "As we grew from 15 to 50 employees, they scaled our IT support perfectly. Their team really understands our business needs.",
+      size: "large",
+      platform: "x"
     },
     {
-      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Phil",
-      name: "Phil Phillips",
-      handle: "@phillipsp55104",
-      review:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum labore incidunt temporibus sunt? Excepturi velit harum.",
+      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Lisa&gender=male",
+      name: "Lisa Thompson",
+      handle: "@lisa_digital",
+      review: "Server issue at midnight - fixed in 10 minutes! 🌙",
+      size: "small",
+      platform: "facebook"
     },
     {
-      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Andy",
-      name: "Andy Anderson",
-      handle: "@andyandyandy",
+      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=James&gender=female",
+      handle: "@jwilson_tech",
+      name: "James Wilson",
       review:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing. Excepturi nulla atque odio dolore, velit harum.",
+        "They manage all our IT needs - from daily support to tech planning. Really feels like part of our team.",
+      size: "large",
+      platform: "linkedin"
     },
+    {
+      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Carlos&gender=female",
+      name: "Carlos Mendoza",
+      handle: "@carlos_m",
+      review: "Quick response times, professional support. Just what we needed! 🚀",
+      size: "small",
+      platform: "x"
+    }
   ],
   center: [
     {
-      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Steve",
-      name: "Steve Stevenson",
-      handle: "@steves",
-      review: "Lorem ipsum, dolor sit amet consectetur adipisicing.",
+      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma&gender=male",
+      name: "Emma Davis",
+      handle: "@emma_d",
+      review:
+        "Being in a small town made IT staffing difficult. Their remote team solved everything - response time usually under 5 minutes.",
+      size: "medium",
+      platform: "facebook"
     },
     {
-      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Peter",
-      name: "Peter Peterson",
-      handle: "@petey.pete",
-      review:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum labore incidunt.",
+      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex&gender=female",
+      name: "Alex Kumar",
+      handle: "@alexk_dev",
+      review: "Email issues resolved in minutes. Great support! ✨",
+      size: "large",
+      platform: "linkedin"
     },
     {
-      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Paul",
-      name: "Paul Paulson",
-      handle: "@p.paulson44",
+      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rachel&gender=male",
+      name: "Rachel Morgan",
+      handle: "@rmorgan",
       review:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit velit harum.",
+        "Our dedicated IT consultant knows our setup perfectly. Always available when needed.",
+      size: "medium",
+      platform: "x"
     },
     {
-      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Phil",
-      name: "Andrew Andrews",
-      handle: "@andrewA",
+      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=David&gender=female",
+      name: "David Park",
+      handle: "@dpark_biz",
       review:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum labore incidunt temporibus sunt.",
+        "Helped us grow from 20 to 75 people smoothly. IT support that actually scales with you.",
+      size: "large",
+      platform: "facebook"
     },
+    {
+      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Victoria&gender=male",
+      name: "Victoria Lee",
+      handle: "@vic_lee",
+      review: "They automated the HELL out of our business, 18 hours manual processes now only takes 2 hours! 📈",
+      size: "small",
+      platform: "linkedin"
+    }
   ],
   right: [
     {
-      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jeff",
-      name: "Jeff Jefferson",
-      handle: "@jeffJ99",
+      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sophie&gender=male",
+      name: "Sophie Anderson",
+      handle: "@sophie_a",
       review:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi nulla atque odio dolore, velit harum.",
+        "Replaced our 2-person IT team with their service. Better coverage, 30% cost savings, and 24/7 support.",
+      size: "medium",
+      platform: "x"
     },
     {
-      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jess",
-      name: "Jess Jessica",
-      handle: "@jess",
-      review:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum labore velit harum. Dolor sit amet consectetur adipisicing elit!",
+      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus&gender=female",
+      name: "Marcus Johnson",
+      handle: "@marcusj",
+      review: "No more IT headaches - they handle everything! 😌",
+      size: "large",
+      platform: "facebook"
     },
     {
-      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ben",
-      name: "Ben Benjamin",
-      handle: "@banjamin4491",
+      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Nina&gender=male",
+      name: "Nina Patel",
+      handle: "@nina_tech",
       review:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum labore incidunt temporibus sunt? Excepturi velit harum.",
+        "Got us a cloud expert right when we needed one. No waiting around.",
+      size: "medium",
+      platform: "linkedin"
     },
     {
-      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Frank",
-      name: "Frank Franklin",
-      handle: "@frankyf00",
+      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Tom&gender=female",
+      name: "Tom Martinez",
+      handle: "@tommartz",
       review:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing. Excepturi nulla.",
+        "They spot and fix issues before they become problems. Proactive support at its best.",
+      size: "large",
+      platform: "x"
     },
-  ],
+    {
+      src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Yuki&gender=male",
+      name: "Yuki Tanaka",
+      handle: "@yuki_t",
+      review: "Fast support, fair pricing. Exactly what we wanted! 💯",
+      size: "small",
+      platform: "facebook"
+    }
+  ]
 };

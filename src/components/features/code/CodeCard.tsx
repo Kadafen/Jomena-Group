@@ -3,11 +3,10 @@ import { Markup } from "./Markup";
 import { Card } from "../../../components/utils/Card";
 import { PulseLine } from "../../../components/utils/PulseLine";
 import { BubbleButton } from "../../../components/buttons/BubbleButton";
-import { SiGithub } from "react-icons/si";
-import { FiStar } from "react-icons/fi";
+import { FiZap } from "react-icons/fi";
 
 export const CodeCard = () => {
-  const [selected, setSelected] = useState<"auto" | "int" | "dev" | "o365" | "it">("auto");
+  const [selected, setSelected] = useState<"auto" | "int" | "dev" | "o365" | "it" | "db" | "domain" | "landing" | "api" | "security" | "infra" | "remote" | "dash">("auto");
 
   return (
     <Card className="mx-auto max-w-3xl pt-3">
@@ -43,11 +42,58 @@ export const CodeCard = () => {
           >
             IT Support
           </ToggleChip>
+          <ToggleChip
+            onClick={() => setSelected("db")}
+            selected={selected === "db"}
+          >
+            Database
+          </ToggleChip>
+          <ToggleChip
+            onClick={() => setSelected("domain")}
+            selected={selected === "domain"}
+          >
+            Domain
+          </ToggleChip>
+          <ToggleChip
+            onClick={() => setSelected("landing")}
+            selected={selected === "landing"}
+          >
+            Landing Page
+          </ToggleChip>
+          <ToggleChip
+            onClick={() => setSelected("api")}
+            selected={selected === "api"}
+          >
+            API
+          </ToggleChip>
+          <ToggleChip
+            onClick={() => setSelected("security")}
+            selected={selected === "security"}
+          >
+            Security
+          </ToggleChip>
+          <ToggleChip
+            onClick={() => setSelected("infra")}
+            selected={selected === "infra"}
+          >
+            Infrastructure
+          </ToggleChip>
+          <ToggleChip
+            onClick={() => setSelected("remote")}
+            selected={selected === "remote"}
+          >
+            Remote Team
+          </ToggleChip>
+          <ToggleChip
+            onClick={() => setSelected("dash")}
+            selected={selected === "dash"}
+          >
+            Dashboard
+          </ToggleChip>
         </div>
         <BubbleButton className="text-xs">
-          <SiGithub />
-          <FiStar className="hidden sm:inline" />
-          <span className="hidden sm:inline">1,234</span>
+          <FiZap className="mr-1" />
+          Deploy
         </BubbleButton>
       </div>
       <div className="no-scrollbar -mx-6 overflow-x-scroll px-6">
@@ -57,15 +103,17 @@ export const CodeCard = () => {
             selected === "int" ? integrationsCode :
             selected === "dev" ? developmentCode :
             selected === "o365" ? office365Code :
-            itSupportCode
+            selected === "it" ? itSupportCode :
+            selected === "db" ? databaseCode :
+            selected === "domain" ? domainCode :
+            selected === "landing" ? landingPageCode :
+            selected === "api" ? apiCode :
+            selected === "security" ? securityCode :
+            selected === "infra" ? infrastructureCode :
+            selected === "remote" ? remoteTeamCode :
+            dashboardCode
           }
-          lang={
-            selected === "auto" ? "typescript" :
-            selected === "int" ? "typescript" :
-            selected === "dev" ? "typescript" :
-            selected === "o365" ? "typescript" :
-            "typescript"
-          }
+          lang="typescript"
         />
       </div>
       <PulseLine />
@@ -225,3 +273,203 @@ support.ready({
 })
 
 // Problems solved, smiles delivered! 😊`;
+
+const databaseCode = `// Managing your data with precision and care 📊
+database.optimize("BusinessDB")
+  // Design for performance
+  .structure({
+    tables: "Perfectly normalized 📐",
+    indexes: "Lightning-fast queries ⚡️",
+    relations: "Everything connected 🔗"
+  })
+
+  // Keep it running smooth
+  .maintain({
+    backup: "Hourly snapshots 📸",
+    cleanup: "No wasted space 🧹",
+    monitor: "Performance insights 📈"
+  })
+
+  // Scale for growth
+  .scale({
+    capacity: "Room to grow 🌱",
+    speed: "Always responsive 🏃‍♂️",
+    reliability: "99.99% uptime ⭐️"
+  })
+
+// Your data, perfectly managed! 💫`;
+
+const domainCode = `// Setting up your perfect online presence 🌐
+domain.configure("yourcompany.com")
+  // Essential setup
+  .setup({
+    dns: "Optimized records ⚡️",
+    ssl: "Bank-grade encryption 🔒",
+    cdn: "Global fast access 🌍"
+  })
+
+  // Email configuration
+  .email({
+    spf: "Spam protection 🛡",
+    dkim: "Email authenticity ✅",
+    mx: "Reliable delivery 📨"
+  })
+
+  // Performance tuning
+  .optimize({
+    caching: "Super fast loading 🚀",
+    routing: "Smart traffic flow 🔄",
+    backup: "Always available ⭐️"
+  })
+
+// Your domain, perfectly configured! 🎯`;
+
+const landingPageCode = `// Creating your perfect landing page 🎨
+landing.create("Product Launch")
+  // Design that converts
+  .design({
+    hero: "Attention-grabbing header 🎯",
+    style: "Modern and clean ✨",
+    mobile: "Perfect on all devices 📱"
+  })
+
+  // Engagement features
+  .engage({
+    cta: "Irresistible buttons 🔥",
+    forms: "Easy to complete 📝",
+    social: "Share everywhere 🌐"
+  })
+
+  // Optimization
+  .optimize({
+    speed: "Lightning fast ⚡️",
+    seo: "Google loves it 🔍",
+    analytics: "Track everything 📊"
+  })
+
+// Ready to convert visitors! 🚀`;
+
+const apiCode = `// Building your perfect API gateway 🔌
+api.create("Business API")
+  // Core setup
+  .configure({
+    auth: "Secure JWT tokens 🔒",
+    rate: "Smart throttling ⚡️",
+    docs: "Clear documentation 📚"
+  })
+
+  // Endpoint design
+  .endpoints({
+    rest: "Clean and intuitive 🎯",
+    graphql: "Flexible queries 🔄",
+    websocket: "Real-time updates 📡"
+  })
+
+  // Performance features
+  .optimize({
+    cache: "Fast responses ⚡️",
+    scaling: "Handles any load 🚀",
+    monitoring: "Full visibility 📊"
+  })
+
+// Your API, ready for action! 🎉`;
+
+const securityCode = `// Protecting your digital assets 🛡
+security.protect("Company Assets")
+  // Access control
+  .access({
+    auth: "Multi-factor enabled 🔐",
+    roles: "Granular permissions 👥",
+    audit: "Track everything 📝"
+  })
+
+  // Threat prevention
+  .defend({
+    firewall: "Smart filtering 🔥",
+    antivirus: "Real-time scanning 🦠",
+    encryption: "Military grade 🔒"
+  })
+
+  // Monitoring & Response
+  .monitor({
+    alerts: "Instant notifications ⚡️",
+    analysis: "AI-powered detection 🤖",
+    response: "Quick remediation 🚑"
+  })
+
+// Your security, our priority! 🎯`;
+
+const infrastructureCode = `// Building your cloud infrastructure 🏗
+infrastructure.deploy("Cloud Platform")
+  // Core services
+  .provision({
+    compute: "Auto-scaling servers ⚡️",
+    storage: "Infinite capacity 💾",
+    network: "Global backbone 🌐"
+  })
+
+  // High availability
+  .configure({
+    loadBalancer: "Smart traffic routing 🔄",
+    failover: "Zero downtime ⚡️",
+    backup: "Disaster recovery 🛟"
+  })
+
+  // Monitoring & Management
+  .manage({
+    metrics: "Real-time insights 📊",
+    costs: "Budget optimization 💰",
+    alerts: "Proactive monitoring 🚨"
+  })
+
+// Your infrastructure, rock solid! 🎯`;
+
+const remoteTeamCode = `// Your remote tech dream team 👥
+team.assemble("Tech Squad")
+  // Team composition
+  .members({
+    developers: "Full-stack ninjas 🥷",
+    designers: "UX wizards 🎨",
+    devops: "Infrastructure heroes 🦸‍♂️"
+  })
+
+  // Collaboration tools
+  .equip({
+    chat: "Instant communication 💬",
+    video: "Face-to-face meetings 🎥",
+    docs: "Knowledge sharing 📚"
+  })
+
+  // Project management
+  .organize({
+    sprints: "Agile workflow 🏃‍♂️",
+    tasks: "Clear objectives 🎯",
+    reviews: "Quality assurance ✨"
+  })
+
+// Your remote team, always connected! 🌟`;
+
+const dashboardCode = `// Building your perfect analytics dashboard 📊
+dashboard.create("Business Insights")
+  // Data sources
+  .connect({
+    sales: "Real-time revenue 💰",
+    users: "Customer activity 👥",
+    systems: "Infrastructure health 🏥"
+  })
+
+  // Visualization
+  .display({
+    charts: "Beautiful insights 📈",
+    alerts: "Important updates 🔔",
+    reports: "Auto-generated PDFs 📄"
+  })
+
+  // Intelligence
+  .analyze({
+    trends: "Pattern detection 🔍",
+    predict: "AI forecasting 🤖",
+    suggest: "Smart recommendations 💡"
+  })
+
+// Your data, beautifully visualized! ✨`;
