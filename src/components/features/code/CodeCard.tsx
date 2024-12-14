@@ -4,9 +4,11 @@ import { Card } from "../../../components/utils/Card";
 import { PulseLine } from "../../../components/utils/PulseLine";
 import { BubbleButton } from "../../../components/buttons/BubbleButton";
 import { FiZap } from "react-icons/fi";
+import { useCalendly } from "@/context/CalendlyContext";
 
 export const CodeCard = () => {
   const [selected, setSelected] = useState<"auto" | "int" | "dev" | "o365" | "it" | "db" | "domain" | "landing" | "api" | "security" | "infra" | "remote" | "dash">("auto");
+  const { openCalendly } = useCalendly();
 
   return (
     <Card className="mx-auto max-w-2xl pt-3">
@@ -113,7 +115,10 @@ export const CodeCard = () => {
         />
       </div>
       <div className="mt-8 flex justify-center">
-        <BubbleButton className="flex items-center gap-2 px-6 py-2 text-base">
+        <BubbleButton 
+          className="flex items-center gap-2 px-6 py-2 text-base"
+          onClick={openCalendly}
+        >
           <FiZap className="text-lg" />
           Deploy
         </BubbleButton>

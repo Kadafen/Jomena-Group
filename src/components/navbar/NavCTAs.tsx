@@ -1,23 +1,24 @@
 import React from "react";
 import { SplashButton } from "../buttons/SplashButton";
 import { GhostButton } from "../buttons/GhostButton";
-import { useRouter } from "next/router";
+import { useCalendly } from "@/context/CalendlyContext";
 
 export const NavCTAs = () => {
-  const router = useRouter();
+  const { openCalendly } = useCalendly();
+  
   return (
     <div className="flex items-center gap-2">
       <GhostButton
-        onClick={() => router.push("/signin")}
+        onClick={openCalendly}
         className="rounded-md px-4 py-1 text-base"
       >
-        Sign up
+        Schedule Demo
       </GhostButton>
       <SplashButton
-        onClick={() => router.push("/signin")}
+        onClick={openCalendly}
         className="px-4 py-1 text-base text-zinc-100"
       >
-        Sign in
+        Get Started
       </SplashButton>
     </div>
   );

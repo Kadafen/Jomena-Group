@@ -5,9 +5,12 @@ import { SplashButton } from "../buttons/SplashButton";
 import { GhostButton } from "../buttons/GhostButton";
 import { GlowingChip } from "../utils/GlowingChip";
 import { useRouter } from "next/router";
+import { useCalendly } from "@/context/CalendlyContext";
 
 export const Content = () => {
   const router = useRouter();
+  const { openCalendly } = useCalendly();
+  
   return (
     <MaxWidthWrapper className="relative z-20 flex flex-col items-center justify-center pb-12 pt-24 md:pb-36 md:pt-36">
       <motion.div
@@ -81,7 +84,7 @@ export const Content = () => {
         className="flex flex-col items-center gap-4 sm:flex-row"
       >
         <SplashButton
-          onClick={() => router.push("/signin")}
+          onClick={openCalendly}
           className="flex items-center gap-2"
         >
           Book a Call

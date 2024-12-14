@@ -6,8 +6,11 @@ import { SectionSubheading } from "../utils/SectionSubheading";
 import { Card } from "../utils/Card";
 import { GhostButton } from "../buttons/GhostButton";
 import { FiCheck, FiX } from "react-icons/fi";
+import { useCalendly } from "@/context/CalendlyContext";
 
 export const Pricing = () => {
+  const { openCalendly } = useCalendly();
+  
   return (
     <section
       id="pricing"
@@ -31,7 +34,7 @@ export const Pricing = () => {
             tier="Free"
             price="$0/mo"
             bestFor="Best for 1-5 users"
-            CTA={<GhostButton className="w-full">Get started free</GhostButton>}
+            CTA={<GhostButton className="w-full" onClick={openCalendly}>Get started free</GhostButton>}
             benefits={[
               { text: "One workspace", checked: true },
               { text: "Email support", checked: true },
@@ -46,7 +49,7 @@ export const Pricing = () => {
             price="$79/mo"
             bestFor="Best for 5-50 users"
             CTA={
-              <GhostButton className="w-full bg-zinc-50 text-zinc-950 hover:bg-zinc-200 hover:text-zinc-900">
+              <GhostButton className="w-full bg-zinc-50 text-zinc-950 hover:bg-zinc-200 hover:text-zinc-900" onClick={openCalendly}>
                 14-day free trial
               </GhostButton>
             }
@@ -63,7 +66,7 @@ export const Pricing = () => {
             tier="Enterprise"
             price="Contact us"
             bestFor="Best for 50+ users"
-            CTA={<GhostButton className="w-full">Contact us</GhostButton>}
+            CTA={<GhostButton className="w-full" onClick={openCalendly}>Contact us</GhostButton>}
             benefits={[
               { text: "Unlimited workspaces", checked: true },
               { text: "Email support", checked: true },
