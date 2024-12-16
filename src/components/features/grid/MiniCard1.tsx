@@ -10,10 +10,10 @@ export const MiniCard1 = () => {
     <div className="col-span-2 h-[375px] md:col-span-1">
       <Card>
         <div className="mx-auto w-fit">
-          <CalloutChip>Always a Step Ahead</CalloutChip>
+          <CalloutChip>Automate Everything</CalloutChip>
         </div>
-        <p className="mb-1.5 text-center text-2xl">Automation</p>
-        <p className="mb-6 text-center text-zinc-400">Modern tools, automate tasks, save time.</p>
+        <p className="mb-1.5 text-center text-2xl">Smart Automation</p>
+        <p className="mb-6 text-center text-zinc-400">Streamline processes. Empower people. Save time. Transform manual tasks into automated workflows that scale.</p>
         <BubbleButton className="mx-auto">Automate Now</BubbleButton>
 
         <Ping />

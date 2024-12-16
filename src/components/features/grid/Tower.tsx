@@ -20,10 +20,10 @@ export const Tower = () => {
       <Card>
         <PulseLine />
 
-        <CalloutChip>Everything Connected</CalloutChip>
-        <p className="mb-2 text-2xl">Smooth Integrations</p>
+        <CalloutChip>Your Remote Tech Team</CalloutChip>
+        <p className="mb-2 text-2xl">Complete IT Management</p>
         <p className="mb-8 text-zinc-400">
-        From Office 365 to hosting, email solutions, and beyond, we integrates all the critical components of your IT infrastructure. We specialize in creating a stable, secure foundation tailored to your business.
+        We handle your entire digital infrastructure: from domain and email setup to Office 365, hosting, and CRM. Your dedicated tech team delivering secure, scalable solutions tailored to your business.
         </p>
 
         <CornerBlur />

@@ -18,10 +18,10 @@ export const LongCard = () => {
     <div className="col-span-2 h-fit sm:h-[209px]">
       <Card>
         <div className="relative z-20">
-          <CalloutChip>Made Just For You</CalloutChip>
-          <p className="mb-1.5 text-2xl">Custom Solutions</p>
+          <CalloutChip>AI-Powered Solutions</CalloutChip>
+          <p className="mb-1.5 text-2xl">Custom AI Integration</p>
           <p className="max-w-sm text-zinc-400">
-          We build what fits your business—not the other way around. Get tools that work seamlessly and scale as you grow.
+          Transform your business with custom AI solutions. From chatbots to predictive analytics, we integrate AI everywhere to make your systems smarter and more efficient.
           </p>
         </div>
         <div className="absolute bottom-0 right-0 top-0 z-10 w-48 bg-gradient-to-r from-zinc-950/0 to-zinc-950" />
