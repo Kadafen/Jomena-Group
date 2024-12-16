@@ -9,7 +9,7 @@ export const NavCTAs = () => {
     <div className="flex items-center">
       <SplashButton
         onClick={openCalendly}
-        className="px-4 py-1 text-base text-zinc-100"
+        className="px-3 py-1 text-sm text-zinc-100 md:px-4 md:text-base"
       >
         Schedule a call
       </SplashButton>
