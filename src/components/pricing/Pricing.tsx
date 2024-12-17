@@ -20,7 +20,7 @@ export const Pricing = () => {
       }}
       className="relative overflow-hidden"
     >
-      <MaxWidthWrapper className="relative z-10 mx-auto max-w-6xl py-20 md:py-40">
+      <MaxWidthWrapper className="relative z-10 mx-auto max-w-7xl py-20 md:py-40">
         <SectionHeadingSpacing>
           <SectionHeading persistCenter>Emergency Support Packages</SectionHeading>
           <SectionSubheading persistCenter>
@@ -46,7 +46,7 @@ export const Pricing = () => {
           <PriceCard
             tier="Essential Support"
             price="$399/mo"
-            bestFor="Perfect for small businesses & startups"
+            bestFor="Perfect for businesses & startups"
             CTA={<GhostButton className="w-full" onClick={openCalendly}>Get Essential Support</GhostButton>}
             benefits={[
               { text: "Email Support", checked: true },
