@@ -22,58 +22,57 @@ export const Pricing = () => {
     >
       <MaxWidthWrapper className="relative z-10 mx-auto max-w-5xl py-20 md:py-40">
         <SectionHeadingSpacing>
-          <SectionHeading persistCenter>Pricing</SectionHeading>
+          <SectionHeading persistCenter>Emergency Support Packages</SectionHeading>
           <SectionSubheading persistCenter>
-            Use it for free for yourself, upgrade when your team needs advanced
-            control.
+            Need immediate technical assistance? Choose the right support package for your business needs.
           </SectionSubheading>
         </SectionHeadingSpacing>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           <PriceCard
-            tier="Free"
-            price="$0/mo"
-            bestFor="Best for 1-5 users"
-            CTA={<GhostButton className="w-full" onClick={openCalendly}>Get started free</GhostButton>}
+            tier="Essential Support"
+            price="$399/mo"
+            bestFor="Perfect for small businesses & startups"
+            CTA={<GhostButton className="w-full" onClick={openCalendly}>Get Essential Support</GhostButton>}
             benefits={[
-              { text: "One workspace", checked: true },
-              { text: "Email support", checked: true },
-              { text: "1 day data retention", checked: false },
-              { text: "Custom roles", checked: false },
-              { text: "Priority support", checked: false },
-              { text: "SSO", checked: false },
+              { text: "Email Support", checked: true },
+              { text: "Remote Technical Assistance", checked: true },
+              { text: "Basic System Maintenance", checked: true },
+              { text: "48hr Response Time", checked: true },
+              { text: "Business Hours Support", checked: true },
+              { text: "Monthly System Health Check", checked: true },
             ]}
           />
           <PriceCard
-            tier="Pro"
-            price="$79/mo"
-            bestFor="Best for 5-50 users"
+            tier="Growth Support"
+            price="$800/mo"
+            bestFor="Ideal for growing businesses"
             CTA={
               <GhostButton className="w-full bg-zinc-50 text-zinc-950 hover:bg-zinc-200 hover:text-zinc-900" onClick={openCalendly}>
-                14-day free trial
+                Get Priority Support
               </GhostButton>
             }
             benefits={[
-              { text: "Five workspaces", checked: true },
-              { text: "Email support", checked: true },
-              { text: "7 day data retention", checked: true },
-              { text: "Custom roles", checked: true },
-              { text: "Priority support", checked: false },
-              { text: "SSO", checked: false },
+              { text: "Priority Email Support", checked: true },
+              { text: "2hr Response Time", checked: true },
+              { text: "Advanced Tech Support", checked: true },
+              { text: "Proactive Monitoring", checked: true },
+              { text: "Weekly System Reports", checked: true },
+              { text: "Dedicated Support Team", checked: true },
             ]}
           />
           <PriceCard
-            tier="Enterprise"
-            price="Contact us"
-            bestFor="Best for 50+ users"
-            CTA={<GhostButton className="w-full" onClick={openCalendly}>Contact us</GhostButton>}
+            tier="Enterprise Support"
+            price="$1,500/mo"
+            bestFor="For large-scale operations"
+            CTA={<GhostButton className="w-full" onClick={openCalendly}>Get Enterprise Support</GhostButton>}
             benefits={[
-              { text: "Unlimited workspaces", checked: true },
-              { text: "Email support", checked: true },
-              { text: "30 day data retention", checked: true },
-              { text: "Custom roles", checked: true },
-              { text: "Priority support", checked: true },
-              { text: "SSO", checked: true },
+              { text: "24/7 Phone Support", checked: true },
+              { text: "1hr Emergency Response", checked: true },
+              { text: "Custom Solutions", checked: true },
+              { text: "Dedicated Account Manager", checked: true },
+              { text: "On-site Emergency Support", checked: true },
+              { text: "Priority Escalation", checked: true },
             ]}
           />
         </div>
