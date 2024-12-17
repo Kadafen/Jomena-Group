@@ -29,7 +29,7 @@ export const SimpleGrid = () => (
     <Item
       Icon={FiDollarSign}
       title="Save thousands"
-      subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo, dolorem."
+      subtitle="Reduce IT costs with efficient solutions and proactive maintenance."
     />
     <Item
       Icon={FiCloud}
