@@ -20,7 +20,7 @@ export const Pricing = () => {
       }}
       className="relative overflow-hidden"
     >
-      <MaxWidthWrapper className="relative z-10 mx-auto max-w-5xl py-20 md:py-40">
+      <MaxWidthWrapper className="relative z-10 mx-auto max-w-6xl py-20 md:py-40">
         <SectionHeadingSpacing>
           <SectionHeading persistCenter>Emergency Support Packages</SectionHeading>
           <SectionSubheading persistCenter>
@@ -28,7 +28,21 @@ export const Pricing = () => {
           </SectionSubheading>
         </SectionHeadingSpacing>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <PriceCard
+            tier="Free Consultation"
+            price="$0"
+            bestFor="Understand your IT needs"
+            CTA={<GhostButton className="w-full" onClick={openCalendly}>Book Consultation</GhostButton>}
+            benefits={[
+              { text: "30-Minute Strategy Call", checked: true },
+              { text: "Basic Needs Assessment", checked: true },
+              { text: "Infrastructure Review", checked: true },
+              { text: "Cost Saving Opportunities", checked: true },
+              { text: "Security Evaluation", checked: true },
+              { text: "Customized Solution Plan", checked: true },
+            ]}
+          />
           <PriceCard
             tier="Essential Support"
             price="$399/mo"
@@ -39,8 +53,10 @@ export const Pricing = () => {
               { text: "Remote Technical Assistance", checked: true },
               { text: "Basic System Maintenance", checked: true },
               { text: "48hr Response Time", checked: true },
-              { text: "Business Hours Support", checked: true },
+              { text: "Business Hours Support (9-5)", checked: true },
               { text: "Monthly System Health Check", checked: true },
+              { text: "Basic Security Monitoring", checked: true },
+              { text: "Data Backup Support", checked: true },
             ]}
           />
           <PriceCard
@@ -53,12 +69,16 @@ export const Pricing = () => {
               </GhostButton>
             }
             benefits={[
-              { text: "Priority Email Support", checked: true },
+              { text: "Everything in Essential, plus:", checked: true },
+              { text: "Priority Email & Phone Support", checked: true },
               { text: "2hr Response Time", checked: true },
               { text: "Advanced Tech Support", checked: true },
-              { text: "Proactive Monitoring", checked: true },
+              { text: "24/7 Proactive Monitoring", checked: true },
               { text: "Weekly System Reports", checked: true },
               { text: "Dedicated Support Team", checked: true },
+              { text: "Cloud Services Management", checked: true },
+              { text: "Advanced Security Suite", checked: true },
+              { text: "Quarterly Strategy Reviews", checked: true },
             ]}
           />
           <PriceCard
@@ -67,12 +87,18 @@ export const Pricing = () => {
             bestFor="For large-scale operations"
             CTA={<GhostButton className="w-full" onClick={openCalendly}>Get Enterprise Support</GhostButton>}
             benefits={[
-              { text: "24/7 Phone Support", checked: true },
+              { text: "Everything in Growth, plus:", checked: true },
+              { text: "24/7 Premium Support", checked: true },
               { text: "1hr Emergency Response", checked: true },
-              { text: "Custom Solutions", checked: true },
+              { text: "Custom Solutions & Development", checked: true },
               { text: "Dedicated Account Manager", checked: true },
               { text: "On-site Emergency Support", checked: true },
               { text: "Priority Escalation", checked: true },
+              { text: "Infrastructure Planning", checked: true },
+              { text: "Enterprise Security Suite", checked: true },
+              { text: "Monthly Executive Reports", checked: true },
+              { text: "Disaster Recovery Planning", checked: true },
+              { text: "Compliance Management", checked: true },
             ]}
           />
         </div>
@@ -95,22 +121,20 @@ const PriceCard = ({
   benefits: BenefitType[];
 }) => {
   return (
-    <Card>
+    <Card className="flex h-full flex-col">
       <div className="flex flex-col items-center border-b border-zinc-700 pb-6">
         <span className="mb-6 inline-block text-zinc-50">{tier}</span>
-        <span className="mb-3 inline-block text-4xl font-medium ">{price}</span>
-        <span className="bg-gradient-to-br from-zinc-200 to-zinc-500 bg-clip-text text-center text-transparent">
-          {bestFor}
-        </span>
+        <span className="mb-3 inline-block text-4xl font-medium">{price}</span>
+        <span className="text-sm text-zinc-400">{bestFor}</span>
       </div>
-
-      <div className="space-y-4 py-9">
-        {benefits.map((b, i) => (
-          <Benefit {...b} key={i} />
-        ))}
+      <div className="flex flex-1 flex-col">
+        <ul className="mb-6 mt-6 flex flex-col gap-4">
+          {benefits.map((benefit, i) => (
+            <Benefit key={i} {...benefit} />
+          ))}
+        </ul>
+        <div className="mt-auto">{CTA}</div>
       </div>
-
-      {CTA}
     </Card>
   );
 };
